@@ -27,10 +27,11 @@ output "sample2" {
 
 variable "Maping" {
 
-    default = 
+    default = {
     batch = 51,
     time = 9,
     Name =  "Sanket"
+    }
 }
 
 output "sample3" {
