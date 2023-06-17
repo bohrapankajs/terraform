@@ -51,3 +51,10 @@ variable "sample5" {}
 output "sample5" {
     value = "You type ${var.sample5}"
 }
+
+variable "bla" {}
+
+
+output "sample5" {
+    value = "You type ${var.bla}"
+}
