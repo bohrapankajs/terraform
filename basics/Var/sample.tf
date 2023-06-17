@@ -36,5 +36,5 @@ variable "Maping" {
 
 output "sample3" {
 
-    value = " This is batch no ${var.Maping[batch]} and time is ${var.Maping[time]} name of the person is ${var.Maping[Name]}"
+    value = " This is batch no ${var.Maping["batch"]} and time is ${var.Maping["time"]} name of the person is ${var.Maping["Name"]}"
 }
