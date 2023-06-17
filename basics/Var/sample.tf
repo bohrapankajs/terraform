@@ -55,6 +55,6 @@ output "sample5" {
 variable "bla" {}
 
 
-output "sample5" {
+output "sample6" {
     value = "You type ${var.bla}"
 }
