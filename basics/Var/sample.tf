@@ -38,3 +38,9 @@ output "sample3" {
 
     value = " This is batch no ${var.Maping["batch"]} and time is ${var.Maping["time"]} name of the person is ${var.Maping["Name"]}"
 }
+
+variable "sample4" {}
+
+output "sample4" {
+    value = "You type ${var.sample4}"
+}
