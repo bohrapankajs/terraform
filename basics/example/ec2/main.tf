@@ -2,9 +2,18 @@ resource "aws_instance" "app" {
   ami                        = data.aws_ami.myami.image_id
   instance_type              = "t2.micro"
   vpc_security_group_ids     = [var.sg]
+  
+  connection {
+    type     = "ssh"
+    user     = "centos"
+    password = "DevOps321"
+    host     = self.private_ip
+  }
 
-  tags = {
-    Name = "MyFirstTerraformInstance"
+  provisioner "remote-exec" {
+    inline = [
+      "ansible-pull -U https://github.com/bohrapankajs/ansible.git -e ansible_user=centos -e ansible_password=DevOps321 -e COMPONENT=mongodb -e ENV=dev roboshop-pull.yml"
+    ]
   }
 }
 
