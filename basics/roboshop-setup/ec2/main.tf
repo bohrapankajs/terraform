@@ -15,12 +15,13 @@ resource "aws_instance" "app" {
   provisioner "remote-exec" {
     inline = [
         "sleep 120s",
+        "which ansible"
       "ansible-pull -U https://github.com/bohrapankajs/ansible.git -e ansible_user=centos -e ansible_password=DevOps321 -e COMPONENT=mongodb -e ENV=dev roboshop-pull.yml",
     ]
   }
 
   tags = {
-    Name = "${var.COMPONENT}"
+    Name = "${var.COMPONENT}-dev"
   }
 }
 
